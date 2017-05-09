@@ -229,7 +229,7 @@ void printData()
     
        Serial.print("TVOC:");
        Serial.print(tvoc);
-       Serial.println("ppb");
+       Serial.println("ppm");
 }
 
 uint8_t readline(char *buff, uint8_t maxbuff)
