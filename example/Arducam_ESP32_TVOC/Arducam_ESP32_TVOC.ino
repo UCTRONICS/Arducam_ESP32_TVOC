@@ -43,8 +43,8 @@ ArducamSSD1306 display(OLED_RESET); // FOR I2C
 WiFiClient client;
 
 String apiKey = "GT8A0Q5UFOHFUHUI";
-char ssid[20] = "KK";
-char password[20] = "12345687";
+char ssid[20] = "Your SSID";
+char password[20] = "PASSWORD";
 
 
 
@@ -67,13 +67,16 @@ void setup()
         sensor.attach(2);
   
       Serial.begin(9600);
-      display.begin();  // Switch OLED  
+      display.begin();  // Switch OLED 
+      display.setTextSize(1);
+      display.setTextColor(WHITE); 
       display.clearDisplay(); 
       display.setCursor(0,20);
       display.print("Connecting to:");
     
       display.setCursor(0,40);
       display.print(ssid);
+      display.display();
       
         // Setup the Internet
       WiFi.begin(ssid, password);
@@ -81,12 +84,14 @@ void setup()
       int dot = 20;
       while (WiFi.status() != WL_CONNECTED) 
       {
-    
+        display.setTextSize(1);
+        display.setTextColor(WHITE); 
         delay(500);
         pos++;
         dot++;
         display.setCursor(dot,40);
         display.print(".");
+        display.display();
        
       }
     
