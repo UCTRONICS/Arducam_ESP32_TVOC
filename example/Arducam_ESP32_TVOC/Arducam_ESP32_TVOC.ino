@@ -82,10 +82,11 @@ void setup()
       WiFi.begin(ssid, password);
       int pos  = 0;
       int dot = 20;
+      display.setTextSize(1);
+        display.setTextColor(WHITE); 
       while (WiFi.status() != WL_CONNECTED) 
       {
-        display.setTextSize(1);
-        display.setTextColor(WHITE); 
+        
         delay(500);
         pos++;
         dot++;
