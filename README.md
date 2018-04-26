@@ -2,9 +2,7 @@
 
 NOTICE:
 
-Before loading this code, you should not connect the KQM2801A and the DHT11,
-
-If not, you may not load it successfully.
+Please connect KQM2801A with DHT11 after uploading the code
 
 
 
